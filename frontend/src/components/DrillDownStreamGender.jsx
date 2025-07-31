@@ -11,10 +11,10 @@ const DrillDownStreamGender = () => {
   const [chartData, setChartData] = useState(null);
 
   useEffect(() => {
-    axios.get('http://localhost:5000/api/drilldown/stream-gender')
+    axios.get('http://172.16.23.130:4000/api/drilldown/stream-gender')
       .then(res => {
         const config = {
-          type: 'bar2d',
+          type: 'column2d',
           width: '100%',
           height: '500',
           dataFormat: 'json',

@@ -10,7 +10,7 @@ const StreamChart = () => {
   const [data, setData] = useState([]);
 
   useEffect(() => {
-    fetch('http://localhost:5000/api/summary/stream')
+    fetch('http://172.16.23.130:4000/api/summary/stream')
       .then(res => res.json())
       .then(data => {
         const chartData = data.map(item => ({

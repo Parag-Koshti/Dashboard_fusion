@@ -7,7 +7,8 @@ import SummaryCard from './SummaryCard';
 import DrillDownChart from './DrillDownChart'; // Post → Stream
 import DrillDownStreamGender from './DrillDownStreamGender';
 import DrillDownPostCity from './DrillDownPostCity'; // Post → City
-import DrillDownFeePostChart from './DrillDownFeePostChart'; // adjust path as needed
+import DrillDownFeePostChart from './DrillDownFeePostChart';
+import CityPwdChart from './CityPwdChart'; // adjust path as needed
 
 
 
@@ -91,28 +92,8 @@ const Dashboard = () => {
               padding: '1rem',
               borderRadius: '8px'
             }}>
-              <div style={{ ...cardStyle, flex: '1 1 30%' }}>
-                <h4>Only Page 1 Completed</h4>
-                <p style={{ fontSize: '1.5rem', fontWeight: 'bold' }}>{pendingBreakup.page1Only}</p>
-              </div>
-              <div style={{ ...cardStyle, flex: '1 1 30%' }}>
-                <h4>Page 2 Completed</h4>
-                <p style={{ fontSize: '1.5rem', fontWeight: 'bold' }}>{pendingBreakup.page2Included}</p>
-              </div>
-              <div style={{ ...cardStyle, flex: '1 1 30%' }}>
-                <h4>Page 3 Completed</h4>
-                <p style={{ fontSize: '1.5rem', fontWeight: 'bold' }}>{pendingBreakup.page3Included}</p>
-              </div>
-              <div style={{
-                ...cardStyle,
-                flex: '1 1 100%',
-                textAlign: 'center',
-                backgroundColor: '#fff3cd'
-              }}>
-                <strong>
-                  ✅ Total (Calculated): {pendingBreakup.calculatedTotal} / Pending: {pendingBreakup.pendingPaymentTotal}
-                </strong>
-              </div>
+              
+            
             </div>
           )}
         </>
@@ -149,6 +130,9 @@ const Dashboard = () => {
       <div style={{ marginTop: '2rem' }}>
         <DrillDownStreamGender />
       </div>
+      <div style={{ marginTop: '2rem' }}>
+      <CityPwdChart />
+    </div>
     </div>
   );
 };

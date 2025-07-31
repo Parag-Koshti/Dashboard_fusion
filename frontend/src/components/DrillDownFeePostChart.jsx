@@ -11,7 +11,7 @@ const DrillDownFeePostChart = () => {
   const [chartData, setChartData] = useState(null);
 
   useEffect(() => {
-    fetch('http://localhost:5000/api/drilldown/fee-post')
+    fetch('http://172.16.23.130:4000/api/drilldown/fee-post')
       .then(res => res.json())
       .then(data => {
         console.log('✅ Chart Data:', data);

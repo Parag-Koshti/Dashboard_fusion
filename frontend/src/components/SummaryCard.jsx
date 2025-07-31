@@ -5,7 +5,7 @@ const SummaryCard = ({ title, endpoint, field }) => {
   const [count, setCount] = useState(null);
 
   useEffect(() => {
-    axios.get(`http://localhost:5000${endpoint}`)
+    axios.get(`http://172.16.23.130:4000${endpoint}`)
       .then(res => {
         if (res.data && res.data[field] !== undefined) {
           setCount(res.data[field]);

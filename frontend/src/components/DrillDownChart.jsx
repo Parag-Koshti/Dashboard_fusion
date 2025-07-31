@@ -11,7 +11,7 @@ const DrillDownChart = () => {
   const [chartData, setChartData] = useState(null);
 
   useEffect(() => {
-    axios.get('http://localhost:5000/api/drilldown/post-stream-gender')
+    axios.get('http://172.16.23.130:4000/api/drilldown/post-stream-gender')
       .then(res => {
         if (!res.data.data || !res.data.linkeddata) {
           console.error("❌ Missing data or linkeddata");

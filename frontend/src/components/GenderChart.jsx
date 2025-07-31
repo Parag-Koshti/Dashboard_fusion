@@ -12,7 +12,7 @@ const GenderChart = () => {
   const [data, setData] = useState([]);
 
   useEffect(() => {
-    axios.get('http://localhost:5000/api/summary/gender')
+    axios.get('http://172.16.23.130:4000/api/summary/gender')
       .then(res => {
         const chartData = res.data.map(item => ({
           label: item._id || 'Unknown',

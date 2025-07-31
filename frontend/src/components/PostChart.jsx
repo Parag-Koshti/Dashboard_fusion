@@ -10,7 +10,7 @@ const PostChart = () => {
   const [data, setData] = useState([]);
 
   useEffect(() => {
-    fetch('http://localhost:5000/api/summary/post')
+    fetch('http://172.16.23.130:4000/api/summary/post')
       .then(res => res.json())
       .then(res => {
         const chartData = res.map(item => ({

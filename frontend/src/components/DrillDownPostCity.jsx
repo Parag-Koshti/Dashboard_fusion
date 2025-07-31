@@ -7,11 +7,11 @@ import axios from 'axios';
 
 ReactFC.fcRoot(FusionCharts, Charts, FusionTheme);
 
-const DrillDownPostCity = () => {
+const DrillDownCityPost = () => {
   const [chartData, setChartData] = useState(null);
 
   useEffect(() => {
-    axios.get('http://localhost:5000/api/drilldown/post-city') // 👈 UPDATED ENDPOINT
+    axios.get('http://172.16.23.130:4000/api/drilldown/city-post') // ✅ City → Post endpoint
       .then(res => {
         setChartData({
           type: 'Column2d',
@@ -20,9 +20,9 @@ const DrillDownPostCity = () => {
           dataFormat: 'json',
           dataSource: {
             chart: {
-              caption: "Post-wise Applications",
-              xAxisName: "Post",
-              yAxisName: "Applications",
+              caption: "Total Preferences per City (1st + 2nd + 3rd)",
+              xAxisName: "City",
+              yAxisName: "Total Preferences",
               theme: "fusion",
               showBackBtn: "1",
               backBtnText: "← Back",
@@ -33,18 +33,18 @@ const DrillDownPostCity = () => {
         });
       })
       .catch(err => {
-        console.error("❌ Error loading post-city drilldown data:", err);
+        console.error("❌ Error loading city-post drilldown data:", err);
       });
   }, []);
 
   return (
     <div>
       <h3 style={{ textAlign: 'center', marginTop: '2rem' }}>
-        Drilldown Chart: (Post → City)
+        Drilldown Chart: (City → Post)
       </h3>
       {chartData ? <ReactFC {...chartData} /> : <p>Loading chart...</p>}
     </div>
   );
 };
 
-export default DrillDownPostCity;
+export default DrillDownCityPost;
